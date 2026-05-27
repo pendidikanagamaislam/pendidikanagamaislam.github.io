@@ -9,8 +9,6 @@ tags: ["quran", "tilawah", "keutamaan", "pahala"]
 featured: false
 ---
 
-## Al-Quran: Pedoman Hidup Umat Islam
-
 Al-Quran adalah firman Allah SWT yang diturunkan kepada Nabi Muhammad SAW melalui Malaikat Jibril. Ia adalah mukjizat terbesar Islam yang tetap terjaga keasliannya hingga hari kiamat.
 
 Allah SWT berfirman:

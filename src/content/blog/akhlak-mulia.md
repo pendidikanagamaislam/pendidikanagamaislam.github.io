@@ -9,8 +9,6 @@ tags: ["akhlak", "karakter", "moral", "adab"]
 featured: false
 ---
 
-## Islam Agama Akhlak
-
 Nabi Muhammad SAW diutus ke muka bumi dengan misi utama yang sangat mulia:
 
 > *"Sesungguhnya aku diutus hanya untuk menyempurnakan akhlak yang mulia."*

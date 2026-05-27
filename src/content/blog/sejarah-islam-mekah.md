@@ -9,8 +9,6 @@ tags: ["sejarah-islam", "nabi-muhammad", "mekah", "dakwah", "sirah"]
 featured: false
 ---
 
-## Latar Belakang Arabia Pra-Islam
-
 Sebelum Islam datang, jazirah Arabia dikenal sebagai masa **Jahiliyah** (kebodohan). Masyarakat Arab saat itu:
 
 - Menyembah berhala — di Ka'bah terdapat 360 berhala

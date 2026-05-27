@@ -9,8 +9,6 @@ tags: ["doa", "dzikir", "harian", "amalan"]
 featured: false
 ---
 
-## Pentingnya Berdoa
-
 Doa adalah bentuk ibadah yang paling mulia. Allah SWT berfirman:
 
 > *"Dan Tuhanmu berfirman: 'Berdoalah kepada-Ku, niscaya akan Kuperkenankan bagimu'."*

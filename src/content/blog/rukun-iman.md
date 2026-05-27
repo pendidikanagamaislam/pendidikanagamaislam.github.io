@@ -9,8 +9,6 @@ tags: ["rukun-iman", "aqidah", "iman", "kepercayaan"]
 featured: true
 ---
 
-## Pengertian Rukun Iman
-
 Iman secara bahasa berarti percaya atau membenarkan. Dalam Islam, iman mencakup **keyakinan dalam hati, pengakuan dengan lisan, dan pembuktian melalui perbuatan**.
 
 Rukun Iman adalah enam pilar kepercayaan yang menjadi dasar akidah Islam.

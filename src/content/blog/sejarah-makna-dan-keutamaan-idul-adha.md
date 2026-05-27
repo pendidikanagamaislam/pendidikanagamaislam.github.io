@@ -8,8 +8,6 @@ image: ""
 tags: ["idul-adha", "kurban", "fiqih", "hari-raya-islam", "nabi-ibrahim"]
 ---
 
-# Idul Adha: Hari Raya Pengorbanan dan Ketaatan
-
 Idul Adha adalah salah satu hari raya besar dalam Islam yang diperingati setiap tanggal 10 Dzulhijjah. Hari raya ini identik dengan ibadah kurban dan menjadi simbol ketaatan seorang hamba kepada Allah SWT.
 
 Umat Islam di seluruh dunia merayakan Idul Adha dengan melaksanakan shalat Id, menyembelih hewan kurban, serta memperbanyak dzikir dan amal kebaikan.

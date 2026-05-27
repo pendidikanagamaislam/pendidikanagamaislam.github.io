@@ -9,8 +9,6 @@ tags: ["zakat", "zakat-fitrah", "ramadhan", "fiqih"]
 featured: false
 ---
 
-## Apa Itu Zakat Fitrah?
-
 Zakat fitrah (zakat al-fitr) adalah **zakat jiwa** yang wajib dikeluarkan oleh setiap Muslim pada bulan Ramadhan. Ia merupakan salah satu bentuk zakat yang paling dikenal dan diamalkan.
 
 Dalilnya sangat kuat:

@@ -9,8 +9,6 @@ tags: ["shalat", "ibadah", "fiqih", "shalat-fardhu"]
 featured: true
 ---
 
-## Mengapa Shalat Begitu Penting?
-
 Shalat adalah ibadah yang paling sering disebut dalam Al-Quran. Ia adalah **tiang agama** — jika ditegakkan, maka agama tegak; jika ditinggalkan, maka agama runtuh.
 
 Rasulullah SAW bersabda:

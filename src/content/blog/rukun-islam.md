@@ -9,8 +9,6 @@ tags: ["rukun-islam", "ibadah", "syahadat", "shalat", "zakat", "puasa", "haji"]
 featured: true
 ---
 
-## Apa Itu Rukun Islam?
-
 Rukun Islam adalah lima perkara pokok yang menjadi fondasi agama Islam. Setiap Muslim wajib meyakini dan melaksanakannya sebagai bentuk ketundukan kepada Allah SWT.
 
 Rasulullah SAW bersabda:
