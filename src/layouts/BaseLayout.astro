@@ -3,6 +3,7 @@ import '../styles/global.css';
 import Navbar from '../components/Navbar.astro';
 import Footer from '../components/Footer.astro';
 import BackToTop from '../components/BackToTop.astro';
+import WelcomeScreen from '../components/WelcomeScreen.astro';
 import { SITE } from '../data/site';
 
 export interface Props {
@@ -88,6 +89,7 @@ const ogImage = image.startsWith('http') ? image : new URL(image, SITE.url).href
   </script>
 </head>
 <body class="min-h-screen flex flex-col bg-white dark:bg-gray-950 transition-colors duration-300">
+  <WelcomeScreen />
   <Navbar />
   <main class="flex-1 animate-fade-up">
     <slot />
