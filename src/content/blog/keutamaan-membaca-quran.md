@@ -4,7 +4,7 @@ description: "Al-Quran adalah pedoman hidup umat Islam. Pelajari 10 keutamaan lu
 pubDate: 2025-01-25
 category: Quran
 author: admin
-image: "/images/keutamaan.png"
+image: "/images/keutamaan.webp"
 tags: ["quran", "tilawah", "keutamaan", "pahala"]
 featured: false
 ---

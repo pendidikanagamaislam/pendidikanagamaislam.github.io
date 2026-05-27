@@ -4,7 +4,7 @@ description: "Pelajari sejarah Idul Adha, kisah Nabi Ibrahim AS, hukum kurban, s
 pubDate: 2026-05-27T09:30:00+07:00
 category: Fiqih
 author: admin
-image: "/images/idul-adha.png"
+image: "/images/idul-adha.webp"
 tags: ["idul-adha", "kurban", "fiqih", "hari-raya-islam", "nabi-ibrahim"]
 ---
 

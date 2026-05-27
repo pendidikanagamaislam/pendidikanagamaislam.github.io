@@ -4,7 +4,7 @@ description: "Zakat fitrah adalah kewajiban setiap Muslim di bulan Ramadhan. Pel
 pubDate: 2025-01-28
 category: Fiqih
 author: admin
-image: "/images/zakat.png"
+image: "/images/zakat.webp"
 tags: ["zakat", "zakat-fitrah", "ramadhan", "fiqih"]
 featured: false
 ---

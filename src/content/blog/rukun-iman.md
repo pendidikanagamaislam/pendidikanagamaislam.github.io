@@ -4,7 +4,7 @@ description: "Rukun Iman adalah enam pilar keyakinan yang wajib dimiliki setiap 
 pubDate: 2025-01-12
 category: Aqidah
 author: admin
-image: "/images/rukun-iman.png"
+image: "/images/rukun-iman.webp"
 tags: ["rukun-iman", "aqidah", "iman", "kepercayaan"]
 featured: true
 ---

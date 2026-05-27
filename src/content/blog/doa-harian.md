@@ -4,7 +4,7 @@ description: "Doa harian yang diajarkan Rasulullah SAW untuk menemani aktivitas 
 pubDate: 2025-01-22
 category: Doa
 author: admin
-image: "/images/doa.png"
+image: "/images/doa.webp"
 tags: ["doa", "dzikir", "harian", "amalan"]
 featured: false
 ---

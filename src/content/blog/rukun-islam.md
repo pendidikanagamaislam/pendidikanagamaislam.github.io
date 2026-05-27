@@ -4,7 +4,7 @@ description: "Rukun Islam adalah lima kewajiban utama yang menjadi fondasi kehid
 pubDate: 2025-01-10
 category: Ibadah
 author: admin
-image: "/images/rukun-islam.png"
+image: "/images/rukun-islam.webp"
 tags: ["rukun-islam", "ibadah", "syahadat", "shalat", "zakat", "puasa", "haji"]
 featured: true
 ---
