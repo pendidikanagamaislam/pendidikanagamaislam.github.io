@@ -151,13 +151,37 @@ const latestPosts = allPosts.slice(0, 6);
       </div>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {[
-          { icon: '⚡', title: 'Super Cepat', desc: 'Dibangun dengan Astro untuk performa maksimal. Waktu muat sangat singkat di semua perangkat.' },
-          { icon: '📱', title: 'Mobile-First', desc: 'Tampilan sempurna di semua ukuran layar — ponsel, tablet, maupun desktop.' },
-          { icon: '🌙', title: 'Dark Mode', desc: 'Nyaman dibaca siang maupun malam. Pilihan tema tersimpan otomatis.' },
-          { icon: '🔍', title: 'Mudah Dicari', desc: 'Fitur pencarian real-time untuk menemukan artikel yang Anda butuhkan.' },
-          { icon: '♿', title: 'Aksesibel', desc: 'Dirancang inklusif dengan aksesibilitas tinggi agar semua orang bisa belajar.' },
-          { icon: '📡', title: 'RSS Feed', desc: 'Ikuti perkembangan konten terbaru via RSS langsung di aplikasi favorit Anda.' },
-        ].map(f => (
+  {
+    icon: '📖',
+    title: 'Sumber Belajar Islami',
+    desc: 'Materi Pendidikan Agama Islam yang informatif, ringkas, dan mudah dipahami.'
+  },
+  {
+    icon: '🕌',
+    title: 'Beragam Topik',
+    desc: 'Mencakup aqidah, ibadah, akhlak, Al-Qur’an, hadits, dan sejarah Islam.'
+  },
+  {
+    icon: '🔍',
+    title: 'Navigasi Mudah',
+    desc: 'Pencarian dan kategori memudahkan akses ke berbagai materi.'
+  },
+  {
+    icon: '📱',
+    title: 'Responsif',
+    desc: 'Optimal digunakan pada berbagai perangkat dan ukuran layar.'
+  },
+  {
+    icon: '🌍',
+    title: 'Akses Terbuka',
+    desc: 'Konten tersedia secara gratis untuk mendukung pembelajaran umat.'
+  },
+  {
+    icon: '✨',
+    title: 'Konten Berkualitas',
+    desc: 'Artikel disusun dengan bahasa yang jelas, terstruktur, dan edukatif.'
+  }
+].map(f => (
           <div class="bg-white dark:bg-gray-900/80 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 card-hover">
             <div class="text-3xl mb-3" aria-hidden="true">{f.icon}</div>
             <h3 class="font-bold text-gray-900 dark:text-white mb-2">{f.title}</h3>
