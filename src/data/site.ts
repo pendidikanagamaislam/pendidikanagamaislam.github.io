@@ -2,9 +2,9 @@ export const SITE = {
   title: 'Belajar PAI',
   description:
     'Website Pendidikan Agama Islam modern — artikel, kajian, dan ilmu keislaman yang ringan, bermanfaat, dan mudah dipahami.',
-  url: 'https://belajar-pai.vercel.app',
-  author: 'Tim Redaksi Belajar PAI',
-  email: 'redaksi@belajar-pai.vercel.app',
+  url: 'https://pendidikanagamaislam.github.io',
+  author: 'Belajar PAI',
+  email: 'pendidikanagamaislam847@gmail.com',
   twitter: '@belajarpai',
   locale: 'id-ID',
 };
