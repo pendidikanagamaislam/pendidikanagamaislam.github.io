@@ -7,13 +7,28 @@ import { CATEGORIES } from '../../data/site';
 
 export async function getStaticPaths() {
   const allPosts = await getCollection('blog', ({ data }) => !data.draft);
-  const cats = [...new Set(allPosts.map(p => p.data.category.toLowerCase()))];
+
+  const cats = [
+    ...new Set(
+      allPosts
+        .map(p => p?.data?.category)
+        .filter(Boolean)
+        .map(c => c.toLowerCase())
+    )
+  ];
+
   return cats.map(kategori => ({
     params: { kategori },
     props: {
       posts: allPosts
-        .filter(p => p.data.category.toLowerCase() === kategori)
-        .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()),
+        .filter(p =>
+          p?.data?.category &&
+          p.data.category.toLowerCase() === kategori
+        )
+        .sort((a, b) =>
+          new Date(b.data.pubDate).valueOf() -
+          new Date(a.data.pubDate).valueOf()
+        ),
     },
   }));
 }

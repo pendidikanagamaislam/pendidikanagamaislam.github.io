@@ -4,12 +4,14 @@ import sitemap from '@astrojs/sitemap';
 import mdx from '@astrojs/mdx';
 
 export default defineConfig({
-  site: 'https://belajar-pai.vercel.app',
+  site: 'https://pendidikanagamaislam.github.io',
+
   integrations: [
-    tailwind(),
-    sitemap(),
-    mdx(),
-  ],
+  tailwind(),
+  mdx(),
+  // sitemap dimatikan dulu
+],
+
   markdown: {
     shikiConfig: {
       theme: 'github-dark',
