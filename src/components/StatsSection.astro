@@ -1,0 +1,23 @@
+---
+const stats = [
+  { value: '114', label: 'Surat Al-Quran', icon: '📿' },
+  { value: '6.236', label: 'Ayat Al-Quran', icon: '✨' },
+  { value: '5', label: 'Rukun Islam', icon: '🌙' },
+  { value: '6', label: 'Rukun Iman', icon: '🕌' },
+];
+---
+<section class="py-12 bg-gradient-to-br from-primary-900 via-primary-800 to-sky-800 text-white" aria-label="Statistik Islam">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+      {stats.map(stat => (
+        <div class="text-center group">
+          <div class="text-4xl mb-2" aria-hidden="true">{stat.icon}</div>
+          <div class="text-3xl sm:text-4xl font-bold text-white mb-1 group-hover:scale-110 transition-transform duration-300">
+            {stat.value}
+          </div>
+          <div class="text-sm text-primary-200">{stat.label}</div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

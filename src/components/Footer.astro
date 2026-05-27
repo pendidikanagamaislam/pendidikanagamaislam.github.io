@@ -1,0 +1,99 @@
+---
+import { SITE, NAV_LINKS, CATEGORIES } from '../data/site';
+---
+<footer class="bg-gray-950 text-gray-300 mt-20">
+  <!-- Top wave -->
+  <div class="h-1 gradient-ocean opacity-80"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+      <!-- Brand -->
+      <div class="lg:col-span-1">
+        <a href="/" class="flex items-center gap-2.5 mb-4" aria-label="Beranda">
+          <div class="w-9 h-9 gradient-ocean rounded-xl flex items-center justify-center shadow-md">
+            <svg viewBox="0 0 24 24" fill="none" class="w-5 h-5 text-white" aria-hidden="true">
+              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z" fill="currentColor"/>
+              <path d="M7 10.5C7 8.57 8.57 7 10.5 7S14 8.57 14 10.5c0 .73-.21 1.41-.57 1.98L16 15h-1.5l-2.27-2.27c-.22.04-.45.07-.68.07A3.502 3.502 0 017 10.5zm3.5-2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" fill="currentColor"/>
+            </svg>
+          </div>
+          <span class="text-lg font-bold text-white">{SITE.title}</span>
+        </a>
+        <p class="text-sm text-gray-400 leading-relaxed mb-5">
+          Portal pembelajaran Pendidikan Agama Islam yang ringan, modern, dan mudah dipahami. Belajar kapan saja, di mana saja.
+        </p>
+        <!-- RSS -->
+        <a href="/rss.xml"
+           class="inline-flex items-center gap-2 text-sm text-orange-400 hover:text-orange-300 transition-colors duration-200">
+          <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 13.1V10.1z"/>
+          </svg>
+          RSS Feed
+        </a>
+      </div>
+
+      <!-- Navigasi -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Navigasi</h3>
+        <ul class="space-y-2.5" role="list">
+          {NAV_LINKS.map(link => (
+            <li>
+              <a href={link.href}
+                 class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Kategori -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Kategori</h3>
+        <ul class="space-y-2.5" role="list">
+          {CATEGORIES.slice(0, 6).map(cat => (
+            <li>
+              <a href={`/kategori/${cat.slug}`}
+                 class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                {cat.icon} {cat.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Legal & Sosial -->
+      <div>
+        <h3 class="text-white font-semibold mb-4">Legal</h3>
+        <ul class="space-y-2.5 mb-6" role="list">
+          {[
+            { href: '/privacy-policy', label: 'Kebijakan Privasi' },
+            { href: '/terms', label: 'Syarat & Ketentuan' },
+            { href: '/sitemap-index.xml', label: 'Sitemap' },
+          ].map(link => (
+            <li>
+              <a href={link.href}
+                 class="text-sm text-gray-400 hover:text-white transition-colors duration-200">
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
+        <h3 class="text-white font-semibold mb-3">Kontak</h3>
+        <a href={`mailto:${SITE.email}`}
+           class="text-sm text-gray-400 hover:text-white transition-colors duration-200 break-all">
+          {SITE.email}
+        </a>
+      </div>
+    </div>
+
+    <!-- Bottom bar -->
+    <div class="mt-12 pt-8 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <p class="text-sm text-gray-500">
+        &copy; {new Date().getFullYear()} {SITE.title}. Dibuat dengan ❤️ menggunakan Astro.
+      </p>
+      <p class="text-sm text-gray-500">
+        <span class="text-green-400">●</span> Performa tinggi · Aksesibilitas baik · SEO optimal
+      </p>
+    </div>
+  </div>
+</footer>

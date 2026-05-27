@@ -1,0 +1,187 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import CategoryGrid from '../components/CategoryGrid.astro';
+import StatsSection from '../components/StatsSection.astro';
+import { getCollection } from 'astro:content';
+import { SITE } from '../data/site';
+
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const featuredPosts = allPosts.slice(0, 3);
+const latestPosts = allPosts.slice(0, 6);
+---
+<BaseLayout>
+  <!-- Hero -->
+  <section class="relative min-h-[90vh] flex items-center overflow-hidden" aria-label="Hero">
+    <div class="absolute inset-0 gradient-ocean"></div>
+    <!-- Decorative pattern -->
+    <div class="absolute inset-0 opacity-10" style="background-image: url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      <!-- Bismillah -->
+      <div class="mb-6 inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 text-white/90 text-sm font-medium">
+        <span class="text-lg">🌙</span>
+        بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+      </div>
+
+      <h1 class="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 leading-tight">
+        Belajar <span class="text-yellow-300">Pendidikan</span><br />
+        Agama Islam
+      </h1>
+      <p class="text-lg sm:text-xl text-white/85 mb-8 max-w-2xl mx-auto leading-relaxed">
+        Portal pembelajaran PAI modern — artikel, kajian, dan ilmu keislaman yang ringan, bermanfaat, dan mudah dipahami siapa saja.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center">
+        <a href="/blog" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-primary-700 font-bold hover:bg-primary-50 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95">
+          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+          </svg>
+          Baca Artikel
+        </a>
+        <a href="/kategori" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-white/60 text-white font-bold hover:bg-white/10 transition-all duration-200 active:scale-95">
+          Lihat Kategori
+        </a>
+      </div>
+
+      <!-- Stats quick bar -->
+      <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">
+        {[
+          { n: allPosts.length.toString(), l: 'Artikel' },
+          { n: '8', l: 'Kategori' },
+          { n: '100%', l: 'Gratis' },
+          { n: '∞', l: 'Ilmu' },
+        ].map(s => (
+          <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-4 border border-white/10">
+            <div class="text-2xl font-bold text-white">{s.n}</div>
+            <div class="text-xs text-white/70 mt-0.5">{s.l}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+    <!-- Wave -->
+    <div class="absolute bottom-0 left-0 right-0">
+      <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" class="w-full text-white dark:text-gray-950 fill-current">
+        <path d="M0 80L48 74.7C96 69 192 59 288 53.3C384 48 480 48 576 53.3C672 59 768 69 864 69.3C960 69 1056 59 1152 53.3C1248 48 1344 48 1392 48L1440 48V80H0Z"/>
+      </svg>
+    </div>
+  </section>
+
+  <!-- Featured articles -->
+  {featuredPosts.length > 0 && (
+    <section class="py-16 bg-white dark:bg-gray-950" aria-labelledby="featured-heading">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between mb-10">
+          <div>
+            <span class="badge bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300 mb-2">⭐ Unggulan</span>
+            <h2 id="featured-heading" class="text-3xl font-bold text-gray-900 dark:text-white">Artikel Pilihan</h2>
+          </div>
+          <a href="/blog" class="btn-outline hidden sm:inline-flex">Lihat semua →</a>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {featuredPosts.map(post => (
+            <ArticleCard
+              title={post.data.title}
+              description={post.data.description}
+              slug={post.slug}
+              pubDate={post.data.pubDate}
+              category={post.data.category}
+              author={post.data.author}
+              image={post.data.image}
+              featured={true}
+              body={post.body}
+            />
+          ))}
+        </div>
+        <div class="mt-6 sm:hidden text-center">
+          <a href="/blog" class="btn-outline">Lihat semua artikel →</a>
+        </div>
+      </div>
+    </section>
+  )}
+
+  <!-- Stats -->
+  <StatsSection />
+
+  <!-- Categories -->
+  <div class="bg-gray-50 dark:bg-gray-900">
+    <CategoryGrid />
+  </div>
+
+  <!-- Latest articles -->
+  <section class="py-16 bg-white dark:bg-gray-950" aria-labelledby="latest-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between mb-10">
+        <div>
+          <span class="badge bg-primary-100 text-primary-700 dark:bg-primary-900/40 dark:text-primary-300 mb-2">🆕 Terbaru</span>
+          <h2 id="latest-heading" class="text-3xl font-bold text-gray-900 dark:text-white">Artikel Terbaru</h2>
+        </div>
+        <a href="/blog" class="btn-primary hidden sm:inline-flex">Lihat semua</a>
+      </div>
+      {latestPosts.length > 0 ? (
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {latestPosts.map(post => (
+            <ArticleCard
+              title={post.data.title}
+              description={post.data.description}
+              slug={post.slug}
+              pubDate={post.data.pubDate}
+              category={post.data.category}
+              author={post.data.author}
+              image={post.data.image}
+              body={post.body}
+            />
+          ))}
+        </div>
+      ) : (
+        <p class="text-center text-gray-500 py-16">Belum ada artikel. Silakan tambahkan konten di <code>src/content/blog/</code>.</p>
+      )}
+      <div class="mt-8 sm:hidden text-center">
+        <a href="/blog" class="btn-primary">Lihat semua artikel</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Keunggulan -->
+  <section class="py-16 bg-gray-50 dark:bg-gray-900" aria-labelledby="keunggulan-heading">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <h2 id="keunggulan-heading" class="text-3xl font-bold text-gray-900 dark:text-white mb-3">Mengapa {SITE.title}?</h2>
+        <p class="text-gray-600 dark:text-gray-400">Kami memastikan pengalaman belajar yang nyaman dan bermakna.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {[
+          { icon: '⚡', title: 'Super Cepat', desc: 'Dibangun dengan Astro untuk performa maksimal. Waktu muat sangat singkat di semua perangkat.' },
+          { icon: '📱', title: 'Mobile-First', desc: 'Tampilan sempurna di semua ukuran layar — ponsel, tablet, maupun desktop.' },
+          { icon: '🌙', title: 'Dark Mode', desc: 'Nyaman dibaca siang maupun malam. Pilihan tema tersimpan otomatis.' },
+          { icon: '🔍', title: 'Mudah Dicari', desc: 'Fitur pencarian real-time untuk menemukan artikel yang Anda butuhkan.' },
+          { icon: '♿', title: 'Aksesibel', desc: 'Dirancang inklusif dengan aksesibilitas tinggi agar semua orang bisa belajar.' },
+          { icon: '📡', title: 'RSS Feed', desc: 'Ikuti perkembangan konten terbaru via RSS langsung di aplikasi favorit Anda.' },
+        ].map(f => (
+          <div class="bg-white dark:bg-gray-900/80 rounded-2xl p-6 border border-gray-100 dark:border-gray-800 card-hover">
+            <div class="text-3xl mb-3" aria-hidden="true">{f.icon}</div>
+            <h3 class="font-bold text-gray-900 dark:text-white mb-2">{f.title}</h3>
+            <p class="text-sm text-gray-600 dark:text-gray-400 leading-relaxed">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Newsletter -->
+  <section class="py-20 bg-white dark:bg-gray-950" aria-label="Ikuti konten terbaru">
+    <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+      <div class="bg-gradient-to-br from-primary-600 to-sky-600 rounded-3xl p-10 shadow-2xl shadow-primary-500/20">
+        <div class="text-4xl mb-4" aria-hidden="true">🤲</div>
+        <h2 class="text-3xl font-bold text-white mb-3">Ikuti Konten Terbaru</h2>
+        <p class="text-primary-100 mb-6">Dapatkan notifikasi artikel baru langsung melalui RSS feed kami.</p>
+        <a href="/rss.xml" class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white text-primary-700 font-bold hover:bg-primary-50 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95">
+          <svg class="w-5 h-5 text-orange-500" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19.01 7.38 20 6.18 20C4.98 20 4 19.01 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 13.1V10.1z"/>
+          </svg>
+          Berlangganan RSS
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

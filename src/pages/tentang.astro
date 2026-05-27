@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+---
+<BaseLayout
+  title="Tentang Kami"
+  description={`Tentang ${SITE.title} — misi, visi, dan tim di balik portal PAI modern ini.`}
+>
+  <div class="pt-24 pb-8 gradient-ocean">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold text-white mb-3">Tentang Kami</h1>
+      <p class="text-primary-100 max-w-xl mx-auto">Mengenal lebih dekat {SITE.title} dan misi kami.</p>
+    </div>
+  </div>
+
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <!-- Bismillah -->
+    <div class="text-center mb-10">
+      <p class="text-2xl font-arabic text-primary-600 dark:text-primary-400 mb-2">
+        بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ
+      </p>
+      <p class="text-sm text-gray-500 dark:text-gray-400 italic">
+        Dengan menyebut nama Allah Yang Maha Pengasih lagi Maha Penyayang
+      </p>
+    </div>
+
+    <div class="prose prose-lg prose-primary max-w-none dark:prose-dark prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-600 dark:prose-p:text-gray-400">
+      <h2>Siapa Kami?</h2>
+      <p>
+        <strong>{SITE.title}</strong> adalah portal digital Pendidikan Agama Islam yang dirancang khusus untuk
+        memudahkan masyarakat Indonesia mengakses ilmu agama Islam secara praktis, ringkas, dan dapat dipercaya.
+      </p>
+      <p>
+        Kami percaya bahwa menuntut ilmu agama adalah kewajiban setiap Muslim. Dengan teknologi modern dan
+        penyajian yang sederhana, kami ingin menjembatani akses ilmu keislaman bagi semua kalangan — dari pelajar,
+        mahasiswa, hingga masyarakat umum.
+      </p>
+
+      <h2>Misi Kami</h2>
+      <ul>
+        <li>Menyajikan konten PAI yang akurat, ringkas, dan mudah dipahami.</li>
+        <li>Membangun platform pembelajaran Islam yang cepat, modern, dan ramah pengguna.</li>
+        <li>Membuka akses ilmu agama yang gratis dan berkualitas untuk semua.</li>
+        <li>Mendorong generasi muda untuk mencintai ilmu Islam.</li>
+      </ul>
+
+      <h2>Konten Kami</h2>
+      <p>Kami menyajikan artikel-artikel pilihan yang mencakup:</p>
+      <ul>
+        <li><strong>Aqidah</strong> — Fondasi keimanan yang benar sesuai Al-Quran dan Sunnah.</li>
+        <li><strong>Ibadah</strong> — Panduan praktis shalat, puasa, zakat, haji, dan ibadah sehari-hari.</li>
+        <li><strong>Akhlak</strong> — Membangun karakter Muslim yang mulia.</li>
+        <li><strong>Fiqih</strong> — Hukum Islam praktis dalam kehidupan modern.</li>
+        <li><strong>Sejarah Islam</strong> — Mengenal jejak peradaban Islam yang agung.</li>
+        <li><strong>Al-Quran & Hadits</strong> — Memahami sumber utama ajaran Islam.</li>
+        <li><strong>Doa & Dzikir</strong> — Kumpulan doa dan dzikir harian.</li>
+      </ul>
+
+      <h2>Tim Redaksi</h2>
+      <p>
+        Konten {SITE.title} ditulis dan dikurasi oleh tim yang terdiri dari guru PAI, mahasiswa ilmu keislaman,
+        dan praktisi pendidikan. Setiap artikel melewati proses review untuk memastikan keakuratan dan kemanfaatannya.
+      </p>
+
+      <blockquote>
+        <p>
+          "Menuntut ilmu adalah kewajiban atas setiap Muslim."
+          <br /><em>— HR. Ibnu Majah</em>
+        </p>
+      </blockquote>
+
+      <h2>Hubungi Kami</h2>
+      <p>
+        Ingin berkontribusi, memberikan saran, atau melaporkan konten? Jangan ragu untuk
+        <a href="/kontak">menghubungi kami</a>.
+      </p>
+    </div>
+  </div>
+</BaseLayout>

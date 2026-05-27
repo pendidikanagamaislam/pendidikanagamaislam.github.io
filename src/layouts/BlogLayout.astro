@@ -1,0 +1,135 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import TableOfContents from '../components/TableOfContents.astro';
+import ShareButtons from '../components/ShareButtons.astro';
+import RelatedPosts from '../components/RelatedPosts.astro';
+import { formatDate, categoryColor, readingTime } from '../utils/helpers';
+import { SITE } from '../data/site';
+
+export interface Props {
+  title: string;
+  description: string;
+  pubDate: Date;
+  updatedDate?: Date;
+  category: string;
+  author: string;
+  image?: string;
+  tags?: string[];
+  slug: string;
+  body: string;
+  headings: { depth: number; slug: string; text: string }[];
+  relatedPosts?: any[];
+}
+
+const {
+  title, description, pubDate, updatedDate, category,
+  author, image, tags = [], slug, body, headings, relatedPosts = [],
+} = Astro.props;
+
+const rt = readingTime(body);
+const categoryBadge = categoryColor(category);
+const articleUrl = `${SITE.url}/blog/${slug}`;
+---
+<BaseLayout title={title} description={description} image={image} type="article" canonicalURL={articleUrl}>
+  <!-- Article Schema -->
+  <script type="application/ld+json" set:html={JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: title,
+    description,
+    image: image ? (image.startsWith('http') ? image : `${SITE.url}${image}`) : undefined,
+    datePublished: pubDate.toISOString(),
+    dateModified: (updatedDate ?? pubDate).toISOString(),
+    author: { "@type": "Person", name: author },
+    publisher: { "@type": "Organization", name: SITE.title, url: SITE.url },
+  })} />
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-8">
+    <Breadcrumb items={[
+      { label: 'Artikel', href: '/blog' },
+      { label: category, href: `/kategori/${category.toLowerCase()}` },
+      { label: title },
+    ]} />
+
+    <div class="mt-6 grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10">
+      <!-- Article -->
+      <article>
+        <!-- Header -->
+        <header class="mb-8">
+          <div class="flex flex-wrap items-center gap-3 mb-4">
+            <span class={`badge ${categoryBadge}`}>{category}</span>
+            <span class="text-sm text-gray-500 dark:text-gray-400">{rt}</span>
+            <span class="text-sm text-gray-500 dark:text-gray-400">{formatDate(pubDate)}</span>
+          </div>
+          <h1 class="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white leading-tight mb-4">
+            {title}
+          </h1>
+          <p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">{description}</p>
+          <div class="mt-4 flex items-center gap-3">
+            <div class="w-9 h-9 rounded-full gradient-ocean flex items-center justify-center text-white font-bold text-sm">
+              {author.charAt(0).toUpperCase()}
+            </div>
+            <div>
+              <p class="text-sm font-semibold text-gray-900 dark:text-white">{author}</p>
+              {updatedDate && (
+                <p class="text-xs text-gray-500 dark:text-gray-400">
+                  Diperbarui {formatDate(updatedDate)}
+                </p>
+              )}
+            </div>
+          </div>
+        </header>
+
+        <!-- Cover image -->
+        {image && (
+          <div class="mb-8 rounded-2xl overflow-hidden shadow-lg">
+            <img src={image} alt={title} class="w-full h-64 sm:h-80 object-cover" loading="lazy" />
+          </div>
+        )}
+
+        <!-- Body -->
+        <div class="prose prose-lg prose-primary max-w-none dark:prose-dark
+                    prose-headings:font-bold prose-headings:text-gray-900 dark:prose-headings:text-white
+                    prose-a:text-primary-600 dark:prose-a:text-primary-400
+                    prose-blockquote:border-primary-500 prose-blockquote:bg-primary-50 dark:prose-blockquote:bg-primary-950/30
+                    prose-blockquote:rounded-r-xl prose-blockquote:py-1 prose-blockquote:pr-4
+                    prose-img:rounded-xl prose-img:shadow-md">
+          <slot />
+        </div>
+
+        <!-- Tags -->
+        {tags.length > 0 && (
+          <div class="mt-10 flex flex-wrap gap-2">
+            {tags.map(tag => (
+              <span class="badge bg-gray-100 text-gray-700 dark:bg-gray-800 dark:text-gray-300">
+                #{tag}
+              </span>
+            ))}
+          </div>
+        )}
+
+        <!-- Share -->
+        <div class="mt-10 p-6 rounded-2xl bg-gradient-to-br from-primary-50 to-sky-50 dark:from-primary-950/30 dark:to-sky-950/20 border border-primary-100 dark:border-primary-800">
+          <ShareButtons url={articleUrl} title={title} />
+        </div>
+      </article>
+
+      <!-- Sidebar -->
+      <aside class="space-y-8">
+        {headings.length > 0 && (
+          <div class="sticky top-24">
+            <TableOfContents headings={headings} />
+          </div>
+        )}
+      </aside>
+    </div>
+
+    <!-- Related posts -->
+    {relatedPosts.length > 0 && (
+      <div class="mt-16">
+        <RelatedPosts posts={relatedPosts} />
+      </div>
+    )}
+  </div>
+</BaseLayout>

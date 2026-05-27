@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+const updated = '1 Januari 2025';
+---
+<BaseLayout
+  title="Kebijakan Privasi"
+  description={`Kebijakan privasi ${SITE.title} — bagaimana kami mengumpulkan, menggunakan, dan melindungi data Anda.`}
+>
+  <div class="pt-24 pb-8 gradient-ocean">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold text-white mb-3">Kebijakan Privasi</h1>
+      <p class="text-primary-100">Terakhir diperbarui: {updated}</p>
+    </div>
+  </div>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="prose prose-lg prose-primary max-w-none dark:prose-dark prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-600 dark:prose-p:text-gray-400">
+      <p>Kami di <strong>{SITE.title}</strong> berkomitmen untuk melindungi privasi Anda. Halaman ini menjelaskan bagaimana kami menangani informasi ketika Anda menggunakan website kami.</p>
+      <h2>Informasi yang Kami Kumpulkan</h2>
+      <p>Website ini adalah website statis yang bersifat hanya-baca. Kami tidak mengumpulkan informasi pribadi apa pun kecuali jika Anda secara sukarela menghubungi kami melalui email atau formulir kontak.</p>
+      <h2>Cookie</h2>
+      <p>Kami menggunakan <code>localStorage</code> hanya untuk menyimpan preferensi tema (gelap/terang) Anda. Tidak ada cookie pelacak atau analitik pihak ketiga yang digunakan.</p>
+      <h2>Tautan Eksternal</h2>
+      <p>Website kami dapat berisi tautan ke situs eksternal. Kami tidak bertanggung jawab atas praktik privasi situs-situs tersebut.</p>
+      <h2>Perubahan Kebijakan</h2>
+      <p>Kebijakan ini dapat diperbarui sewaktu-waktu. Perubahan akan dicantumkan di halaman ini beserta tanggal pembaruan.</p>
+      <h2>Hubungi Kami</h2>
+      <p>Pertanyaan seputar privasi dapat dikirimkan ke <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+    </div>
+  </div>
+</BaseLayout>

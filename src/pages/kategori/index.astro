@@ -1,0 +1,49 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../../data/site';
+
+const allPosts = await getCollection('blog', ({ data }) => !data.draft);
+
+// Count posts per category
+const countMap: Record<string, number> = {};
+allPosts.forEach(p => {
+  const key = p.data.category.toLowerCase();
+  countMap[key] = (countMap[key] ?? 0) + 1;
+});
+---
+<BaseLayout
+  title="Kategori Artikel"
+  description="Jelajahi artikel PAI berdasarkan kategori — aqidah, ibadah, akhlak, fiqih, sejarah Islam, Al-Quran, hadits, doa."
+>
+  <div class="pt-24 pb-8 gradient-ocean">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold text-white mb-3">Kategori Artikel</h1>
+      <p class="text-primary-100 max-w-xl mx-auto">Pilih topik yang ingin Anda pelajari lebih dalam.</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {CATEGORIES.map(cat => {
+        const count = countMap[cat.slug] ?? 0;
+        return (
+          <a
+            href={`/kategori/${cat.slug}`}
+            class="group bg-white dark:bg-gray-900 border border-gray-100 dark:border-gray-800 rounded-2xl p-6 card-hover text-center"
+          >
+            <div class="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
+              {cat.icon}
+            </div>
+            <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-1 group-hover:text-primary-600 dark:group-hover:text-primary-400 transition-colors duration-200">
+              {cat.label}
+            </h2>
+            <p class="text-sm text-gray-500 dark:text-gray-400">
+              {count} artikel
+            </p>
+          </a>
+        );
+      })}
+    </div>
+  </div>
+</BaseLayout>

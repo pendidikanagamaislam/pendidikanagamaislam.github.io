@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    scroll-behavior: smooth;
+  }
+
+  html {
+    @apply antialiased;
+    font-family: 'Inter', 'Poppins', sans-serif;
+  }
+
+  body {
+    @apply bg-white text-gray-800 transition-colors duration-300;
+  }
+
+  .dark body {
+    @apply bg-gray-950 text-gray-100;
+  }
+
+  ::selection {
+    @apply bg-primary-200 text-primary-900;
+  }
+
+  .dark ::selection {
+    @apply bg-primary-800 text-primary-100;
+  }
+}
+
+@layer components {
+  /* Navbar blur glass */
+  .navbar-glass {
+    @apply backdrop-blur-md bg-white/80 dark:bg-gray-950/80 border-b border-white/20 dark:border-gray-800/50;
+  }
+
+  /* Card hover lift */
+  .card-hover {
+    @apply transition-all duration-300 hover:-translate-y-1 hover:shadow-xl;
+  }
+
+  /* Ocean gradient */
+  .gradient-ocean {
+    background: linear-gradient(135deg, #1e3a8a 0%, #0ea5e9 50%, #38bdf8 100%);
+  }
+
+  /* Hero gradient overlay */
+  .hero-overlay {
+    background: linear-gradient(
+      135deg,
+      rgba(30, 58, 138, 0.92) 0%,
+      rgba(14, 165, 233, 0.80) 100%
+    );
+  }
+
+  /* Badge */
+  .badge {
+    @apply inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  /* Button primary */
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary-600 hover:bg-primary-700 text-white font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-primary-500/30 active:scale-95;
+  }
+
+  /* Button outline */
+  .btn-outline {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 rounded-xl border-2 border-primary-600 text-primary-600 dark:text-primary-400 dark:border-primary-400 font-semibold hover:bg-primary-50 dark:hover:bg-primary-950 transition-all duration-200 active:scale-95;
+  }
+
+  /* Prose dark override */
+  .dark .prose {
+    @apply prose-dark;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-900;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-primary-300 dark:bg-primary-700 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-primary-400 dark:bg-primary-600;
+}
+
+/* Smooth page transitions */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.animate-fade-up {
+  animation: fadeUp 0.5s ease both;
+}
+
+/* Back to top */
+#back-to-top {
+  @apply fixed bottom-6 right-6 z-50 p-3 rounded-full bg-primary-600 text-white shadow-lg transition-all duration-300;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(8px);
+}
+#back-to-top.visible {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+/* TOC highlight */
+.toc-link.active {
+  @apply text-primary-600 dark:text-primary-400 font-semibold;
+}
+
+/* Code block */
+pre {
+  @apply rounded-xl overflow-x-auto !important;
+}

@@ -1,0 +1,87 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import SearchBar from '../../components/SearchBar.astro';
+import Pagination from '../../components/Pagination.astro';
+import { getCollection } from 'astro:content';
+import { CATEGORIES } from '../../data/site';
+
+const POSTS_PER_PAGE = 9;
+
+const allPosts = (await getCollection('blog', ({ data }) => !data.draft))
+  .sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+
+const totalPages = Math.ceil(allPosts.length / POSTS_PER_PAGE);
+const pagePosts = allPosts.slice(0, POSTS_PER_PAGE);
+
+const categories = [...new Set(allPosts.map(p => p.data.category))];
+---
+<BaseLayout
+  title="Semua Artikel"
+  description="Kumpulan artikel Pendidikan Agama Islam — aqidah, ibadah, akhlak, fiqih, sejarah Islam, Al-Quran, hadits, dan doa."
+>
+  <div class="pt-24 pb-8 gradient-ocean">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold text-white mb-3">Semua Artikel</h1>
+      <p class="text-primary-100 max-w-xl mx-auto">Temukan ribuan artikel PAI yang ringan, bermanfaat, dan mudah dipahami.</p>
+    </div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+    <!-- Search -->
+    <div class="max-w-xl mx-auto mb-8">
+      <SearchBar />
+    </div>
+
+    <!-- Category filter -->
+    <div class="flex flex-wrap gap-2 justify-center mb-10">
+      <a href="/blog"
+         class="badge bg-primary-600 text-white px-4 py-2">Semua</a>
+      {categories.map(cat => (
+        <a href={`/kategori/${cat.toLowerCase()}`}
+           class="badge bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-primary-100 dark:hover:bg-primary-900 hover:text-primary-700 dark:hover:text-primary-300 px-4 py-2 transition-colors duration-200">
+          {cat}
+        </a>
+      ))}
+    </div>
+
+    <!-- Grid -->
+    {pagePosts.length > 0 ? (
+      <>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="articles-grid">
+  {pagePosts.map(post => (
+    <div data-search={`${post.data.title} ${post.data.description} ${post.data.category} ${post.data.tags.join(' ')}`}>
+      <ArticleCard
+        title={post.data.title}
+        description={post.data.description}
+        slug={post.slug}
+        pubDate={post.data.pubDate}
+        category={post.data.category}
+        author={post.data.author}
+        image={post.data.image}
+        body={post.body}
+      />
+    </div>
+  ))}
+</div>
+          ))}
+        </div>
+
+        <!-- Empty state for search -->
+        <div id="search-empty" class="hidden text-center py-16">
+          <div class="text-5xl mb-4" aria-hidden="true">🔍</div>
+          <p class="text-gray-500 dark:text-gray-400 text-lg">Artikel tidak ditemukan.</p>
+          <p class="text-gray-400 dark:text-gray-500 text-sm mt-1">Coba kata kunci lain.</p>
+        </div>
+
+        <Pagination currentPage={1} totalPages={totalPages} baseUrl="/blog" />
+      </>
+    ) : (
+      <div class="text-center py-24">
+        <div class="text-6xl mb-4" aria-hidden="true">📝</div>
+        <h2 class="text-xl font-semibold text-gray-900 dark:text-white mb-2">Belum ada artikel</h2>
+        <p class="text-gray-500 dark:text-gray-400">Tambahkan file <code class="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">.md</code> di <code class="bg-gray-100 dark:bg-gray-800 px-1.5 py-0.5 rounded">src/content/blog/</code></p>
+      </div>
+    )}
+  </div>
+</BaseLayout>

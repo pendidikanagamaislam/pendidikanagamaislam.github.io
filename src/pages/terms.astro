@@ -1,0 +1,31 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../data/site';
+const updated = '1 Januari 2025';
+---
+<BaseLayout
+  title="Syarat & Ketentuan"
+  description={`Syarat dan ketentuan penggunaan ${SITE.title}.`}
+>
+  <div class="pt-24 pb-8 gradient-ocean">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <h1 class="text-4xl font-bold text-white mb-3">Syarat & Ketentuan</h1>
+      <p class="text-primary-100">Terakhir diperbarui: {updated}</p>
+    </div>
+  </div>
+  <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <div class="prose prose-lg prose-primary max-w-none dark:prose-dark prose-headings:text-gray-900 dark:prose-headings:text-white prose-p:text-gray-600 dark:prose-p:text-gray-400">
+      <p>Dengan mengakses dan menggunakan <strong>{SITE.title}</strong>, Anda menyetujui syarat dan ketentuan berikut.</p>
+      <h2>Penggunaan Konten</h2>
+      <p>Seluruh konten di website ini disediakan untuk tujuan pendidikan dan informasi. Anda diperbolehkan membagikan konten dengan menyertakan atribusi kepada {SITE.title}.</p>
+      <h2>Hak Kekayaan Intelektual</h2>
+      <p>Konten, desain, dan kode sumber website ini adalah milik {SITE.title}. Dilarang memperbanyak atau mendistribusikan tanpa izin tertulis.</p>
+      <h2>Penafian</h2>
+      <p>Konten di website ini bersifat informatif dan edukatif. Untuk masalah hukum agama yang serius, konsultasikan kepada ulama atau ahli yang kompeten.</p>
+      <h2>Perubahan Layanan</h2>
+      <p>Kami berhak mengubah, menangguhkan, atau menghentikan layanan kapan saja tanpa pemberitahuan sebelumnya.</p>
+      <h2>Kontak</h2>
+      <p>Pertanyaan terkait syarat dan ketentuan dapat dikirimkan ke <a href={`mailto:${SITE.email}`}>{SITE.email}</a>.</p>
+    </div>
+  </div>
+</BaseLayout>
