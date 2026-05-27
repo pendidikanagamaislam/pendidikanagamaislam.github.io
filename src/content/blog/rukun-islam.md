@@ -3,7 +3,7 @@ title: "Mengenal Lima Rukun Islam: Fondasi Kehidupan Seorang Muslim"
 description: "Rukun Islam adalah lima kewajiban utama yang menjadi fondasi kehidupan setiap Muslim. Pelajari makna dan hikmah di balik kelima rukun tersebut."
 pubDate: 2025-01-10
 category: Ibadah
-author: Ustadz Ahmad Fauzi
+author: admin
 image: ""
 tags: ["rukun-islam", "ibadah", "syahadat", "shalat", "zakat", "puasa", "haji"]
 featured: true

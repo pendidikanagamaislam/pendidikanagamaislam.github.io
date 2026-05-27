@@ -3,7 +3,7 @@ title: "Sejarah Islam di Mekah: Perjalanan Dakwah Nabi Muhammad SAW"
 description: "Pelajari perjalanan dakwah Nabi Muhammad SAW di Mekah selama 13 tahun — dari wahyu pertama, ujian berat, hingga peristiwa hijrah yang mengubah sejarah dunia."
 pubDate: 2025-01-20
 category: Sejarah Islam
-author: Prof. Dr. Yusuf Mansur
+author: admin
 image: ""
 tags: ["sejarah-islam", "nabi-muhammad", "mekah", "dakwah", "sirah"]
 featured: false

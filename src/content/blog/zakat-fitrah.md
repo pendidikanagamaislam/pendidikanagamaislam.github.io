@@ -3,7 +3,7 @@ title: "Panduan Zakat Fitrah: Syarat, Besaran, dan Waktu Pembayaran"
 description: "Zakat fitrah adalah kewajiban setiap Muslim di bulan Ramadhan. Pelajari syarat, besaran, cara menghitung, dan waktu pembayaran zakat fitrah yang benar."
 pubDate: 2025-01-28
 category: Fiqih
-author: Ustadz Dr. Syamsul Bahri
+author: admin
 image: ""
 tags: ["zakat", "zakat-fitrah", "ramadhan", "fiqih"]
 featured: false

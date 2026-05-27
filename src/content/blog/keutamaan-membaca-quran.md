@@ -3,7 +3,7 @@ title: "10 Keutamaan Membaca Al-Quran yang Wajib Anda Ketahui"
 description: "Al-Quran adalah pedoman hidup umat Islam. Pelajari 10 keutamaan luar biasa membaca Al-Quran yang dijelaskan langsung dalam hadits-hadits shahih."
 pubDate: 2025-01-25
 category: Quran
-author: Ustadz Dr. Syamsul Bahri
+author: admin
 image: ""
 tags: ["quran", "tilawah", "keutamaan", "pahala"]
 featured: false

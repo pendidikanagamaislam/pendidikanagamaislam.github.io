@@ -3,7 +3,7 @@ title: "Kumpulan Doa Harian Muslim: Panduan Lengkap dari Pagi hingga Malam"
 description: "Doa harian yang diajarkan Rasulullah SAW untuk menemani aktivitas dari bangun tidur hingga tidur kembali. Lengkap dengan Arab, latin, dan terjemahan."
 pubDate: 2025-01-22
 category: Doa
-author: Ustadzah Fatimah Zahrah
+author: admin
 image: ""
 tags: ["doa", "dzikir", "harian", "amalan"]
 featured: false

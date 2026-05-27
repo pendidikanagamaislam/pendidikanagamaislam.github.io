@@ -3,7 +3,7 @@ title: "Panduan Lengkap Shalat Lima Waktu: Tata Cara dan Keutamaannya"
 description: "Pelajari tata cara shalat lima waktu yang benar, mulai dari syarat wajib, rukun shalat, hingga keutamaan yang luar biasa di balik ibadah tiang agama ini."
 pubDate: 2025-01-15
 category: Ibadah
-author: Ustadz Ahmad Fauzi
+author: admin
 image: ""
 tags: ["shalat", "ibadah", "fiqih", "shalat-fardhu"]
 featured: true

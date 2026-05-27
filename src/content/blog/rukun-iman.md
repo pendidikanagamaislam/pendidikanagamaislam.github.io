@@ -3,7 +3,7 @@ title: "Enam Rukun Iman: Fondasi Kepercayaan Seorang Muslim"
 description: "Rukun Iman adalah enam pilar keyakinan yang wajib dimiliki setiap Muslim. Pelajari apa saja keenam rukun iman dan maknanya dalam kehidupan sehari-hari."
 pubDate: 2025-01-12
 category: Aqidah
-author: Ustadz Dr. Syamsul Bahri
+author: admin
 image: ""
 tags: ["rukun-iman", "aqidah", "iman", "kepercayaan"]
 featured: true

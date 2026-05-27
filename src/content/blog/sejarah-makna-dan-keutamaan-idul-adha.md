@@ -3,7 +3,7 @@ title: "Idul Adha: Sejarah, Makna, dan Keutamaan Hari Raya Kurban"
 description: "Pelajari sejarah Idul Adha, kisah Nabi Ibrahim AS, hukum kurban, serta hikmah besar yang dapat diterapkan dalam kehidupan seorang Muslim."
 pubDate: 2026-05-27T09:30:00+07:00
 category: Fiqih
-author: Ustadz Dr. Syamsul Bahri
+author: admin
 image: ""
 tags: ["idul-adha", "kurban", "fiqih", "hari-raya-islam", "nabi-ibrahim"]
 ---

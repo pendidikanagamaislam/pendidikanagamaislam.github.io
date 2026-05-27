@@ -3,7 +3,7 @@ title: "Akhlak Mulia: Kunci Kesempurnaan Iman Seorang Muslim"
 description: "Islam sangat menekankan pentingnya akhlak yang baik. Pelajari bagaimana akhlak mulia menjadi cerminan keimanan dan cara membangunnya dalam kehidupan sehari-hari."
 pubDate: 2025-01-18
 category: Akhlak
-author: Ustadzah Fatimah Zahrah
+author: admin
 image: ""
 tags: ["akhlak", "karakter", "moral", "adab"]
 featured: false
