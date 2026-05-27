@@ -4,7 +4,7 @@ description: "Islam sangat menekankan pentingnya akhlak yang baik. Pelajari baga
 pubDate: 2025-01-18
 category: Akhlak
 author: admin
-image: ""
+image: "/images/akhlak.png"
 tags: ["akhlak", "karakter", "moral", "adab"]
 featured: false
 ---

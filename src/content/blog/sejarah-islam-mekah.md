@@ -4,7 +4,7 @@ description: "Pelajari perjalanan dakwah Nabi Muhammad SAW di Mekah selama 13 ta
 pubDate: 2025-01-20
 category: Sejarah Islam
 author: admin
-image: ""
+image: "/images/sejarah-islam.png"
 tags: ["sejarah-islam", "nabi-muhammad", "mekah", "dakwah", "sirah"]
 featured: false
 ---

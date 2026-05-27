@@ -4,7 +4,7 @@ description: "Pelajari tata cara shalat lima waktu yang benar, mulai dari syarat
 pubDate: 2025-01-15
 category: Ibadah
 author: admin
-image: ""
+image: "/images/shalat.png"
 tags: ["shalat", "ibadah", "fiqih", "shalat-fardhu"]
 featured: true
 ---
