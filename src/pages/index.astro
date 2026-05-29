@@ -32,17 +32,34 @@ const latestPosts = allPosts.slice(0, 6);
       <p class="text-lg sm:text-xl text-white/85 mb-8 max-w-2xl mx-auto leading-relaxed">
         Portal pembelajaran PAI modern — artikel, kajian, dan ilmu keislaman yang ringan, bermanfaat, dan mudah dipahami siapa saja.
       </p>
-      <div class="flex flex-col sm:flex-row gap-3 justify-center">
-        <a href="/blog" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-primary-700 font-bold hover:bg-primary-50 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95">
-          <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
-          </svg>
-          Baca Artikel
-        </a>
-        <a href="/kategori" class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-white/60 text-white font-bold hover:bg-white/10 transition-all duration-200 active:scale-95">
-          Lihat Kategori
-        </a>
-      </div>
+      <div class="flex flex-col sm:flex-row gap-3 justify-center flex-wrap">
+  <a
+    href="/blog"
+    class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-primary-700 font-bold hover:bg-primary-50 transition-all duration-200 shadow-lg hover:shadow-xl active:scale-95"
+  >
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+    </svg>
+    Baca Artikel
+  </a>
+
+  <a
+    href="/kategori"
+    class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl border-2 border-white/60 text-white font-bold hover:bg-white/10 transition-all duration-200 active:scale-95"
+  >
+    Lihat Kategori
+  </a>
+
+  <a
+    href="/quiz"
+    class="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-yellow-400 text-slate-900 font-bold hover:bg-yellow-300 transition-all duration-200 shadow-lg hover:shadow-xl hover:-translate-y-1 active:scale-95"
+  >
+    <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636-.707.707M21 12h-1M4 12H3m3.343-5.657-.707-.707m2.828 11.314a4 4 0 115.656 0A5 5 0 0115 17.197V18a1 1 0 01-1 1h-4a1 1 0 01-1-1v-.803a5 5 0 01-1.172-8.995 4 4 0 015.656 0A5 5 0 0115 17.197"/>
+    </svg>
+    Mulai Quiz
+  </a>
+</div>
 
       <!-- Stats quick bar -->
       <div class="mt-16 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl mx-auto">

@@ -1,0 +1,298 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const questions = [
+  {
+    question: "Siapa nabi terakhir?",
+    options: ["Nabi Musa", "Nabi Isa", "Nabi Muhammad", "Nabi Nuh"],
+    answer: "Nabi Muhammad"
+  },
+  {
+    question: "Jumlah nabi dan rasul yang wajib diketahui adalah?",
+    options: ["10", "15", "20", "25"],
+    answer: "25"
+  },
+  {
+    question: "Nabi yang menerima kitab Taurat adalah?",
+    options: ["Nabi Isa", "Nabi Musa", "Nabi Dawud", "Nabi Ibrahim"],
+    answer: "Nabi Musa"
+  },
+  {
+    question: "Nabi yang bisa berbicara sejak bayi adalah?",
+    options: ["Nabi Isa", "Nabi Yusuf", "Nabi Yunus", "Nabi Nuh"],
+    answer: "Nabi Isa"
+  },
+  {
+    question: "Nabi yang membuat kapal besar adalah?",
+    options: ["Nabi Ibrahim", "Nabi Nuh", "Nabi Musa", "Nabi Hud"],
+    answer: "Nabi Nuh"
+  },
+  {
+    question: "Ayah para nabi disebut?",
+    options: ["Nabi Musa", "Nabi Isa", "Nabi Ibrahim", "Nabi Yusuf"],
+    answer: "Nabi Ibrahim"
+  },
+  {
+    question: "Nabi yang ditelan ikan paus adalah?",
+    options: ["Nabi Yunus", "Nabi Yusuf", "Nabi Hud", "Nabi Luth"],
+    answer: "Nabi Yunus"
+  },
+  {
+    question: "Nabi yang terkenal sangat tampan adalah?",
+    options: ["Nabi Yusuf", "Nabi Musa", "Nabi Isa", "Nabi Adam"],
+    answer: "Nabi Yusuf"
+  },
+  {
+    question: "Kitab Zabur diturunkan kepada nabi?",
+    options: ["Nabi Dawud", "Nabi Musa", "Nabi Isa", "Nabi Muhammad"],
+    answer: "Nabi Dawud"
+  },
+  {
+    question: "Nabi pertama adalah?",
+    options: ["Nabi Nuh", "Nabi Ibrahim", "Nabi Adam", "Nabi Musa"],
+    answer: "Nabi Adam"
+  }
+];
+---
+
+<BaseLayout
+  title="Quiz Nabi dan Rasul"
+  description="Quiz interaktif Nabi dan Rasul untuk siswa SD"
+>
+
+<section class="relative overflow-hidden py-20">
+
+  <div class="absolute inset-0 bg-gradient-to-br from-primary-600 via-primary-700 to-primary-900"></div>
+
+  <div class="absolute inset-0 opacity-20">
+    <div class="absolute top-0 left-0 w-72 h-72 bg-yellow-300 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-0 right-0 w-72 h-72 bg-blue-300 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="relative max-w-4xl mx-auto px-6">
+
+    <div class="text-center mb-14">
+
+      <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/20 text-white text-sm font-semibold backdrop-blur-sm mb-6">
+        🌙 Quiz PAI SD
+      </div>
+
+      <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-6">
+        Quiz
+        <span class="block text-yellow-300">
+          Nabi dan Rasul
+        </span>
+      </h1>
+
+      <p class="max-w-2xl mx-auto text-lg text-primary-100 leading-relaxed">
+        Uji pengetahuanmu tentang kisah nabi dan rasul melalui quiz interaktif berikut.
+      </p>
+
+    </div>
+
+    <div id="quiz-container" class="space-y-8">
+
+      {questions.map((q, index) => (
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-3xl p-7 shadow-xl">
+
+          <div class="flex items-center gap-3 mb-5">
+
+            <div class="w-10 h-10 rounded-xl bg-yellow-300 text-slate-900 font-black flex items-center justify-center">
+              {index + 1}
+            </div>
+
+            <h2 class="text-xl md:text-2xl font-black text-white">
+              {q.question}
+            </h2>
+
+          </div>
+
+          <div class="space-y-3">
+
+            {q.options.map((option) => (
+              <label class="flex items-center gap-4 bg-white/10 border border-white/10 hover:border-yellow-300/40 hover:bg-white/15 rounded-2xl p-4 cursor-pointer transition-all duration-200">
+
+                <input
+                  type="radio"
+                  name={`question-${index}`}
+                  value={option}
+                  class="w-5 h-5 accent-yellow-400"
+                />
+
+                <span class="text-white font-medium">
+                  {option}
+                </span>
+
+              </label>
+            ))}
+
+          </div>
+
+        </div>
+      ))}
+
+      <div class="text-center pt-4">
+
+        <button
+          id="submitBtn"
+          class="inline-flex items-center gap-3 px-10 py-5 rounded-2xl bg-yellow-300 text-slate-900 font-black text-lg hover:bg-yellow-200 hover:-translate-y-1 transition-all duration-300 shadow-2xl"
+        >
+          🌟 Lihat Hasil Quiz
+        </button>
+
+      </div>
+
+      <div
+        id="result"
+        class="hidden mt-12 bg-white/10 backdrop-blur-md border border-green-400/40 rounded-3xl p-8 shadow-2xl"
+      >
+
+        <div class="text-center">
+
+          <div class="text-5xl mb-4">
+            🎉
+          </div>
+
+          <h2 class="text-4xl font-black text-white mb-4">
+            Hasil Quiz
+          </h2>
+
+          <div id="scoreText"></div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<script define:vars={{ questions }}>
+  const submitBtn = document.getElementById("submitBtn");
+  const result = document.getElementById("result");
+  const scoreText = document.getElementById("scoreText");
+
+  submitBtn.addEventListener("click", () => {
+    let score = 0;
+    let wrongAnswers = [];
+
+    questions.forEach((q, index) => {
+      const selected = document.querySelector(
+        `input[name="question-${index}"]:checked`
+      );
+
+      const selectedValue = selected
+        ? selected.value
+        : "Tidak dijawab";
+
+      if (selectedValue === q.answer) {
+        score++;
+      } else {
+        wrongAnswers.push({
+          number: index + 1,
+          question: q.question,
+          userAnswer: selectedValue,
+          correctAnswer: q.answer
+        });
+      }
+    });
+
+    const nilai = Math.round(
+      (score / questions.length) * 100
+    );
+
+    let wrongHTML = "";
+
+    if (wrongAnswers.length > 0) {
+      wrongHTML = `
+        <div class="mt-10 text-left">
+
+          <h3 class="text-3xl font-black text-red-300 mb-6">
+            ❌ Soal Yang Salah
+          </h3>
+
+          <div class="space-y-5">
+
+            ${wrongAnswers.map(item => `
+              <div class="bg-red-500/10 border border-red-400/30 rounded-2xl p-5">
+
+                <div class="flex items-center gap-3 mb-3">
+
+                  <div class="w-10 h-10 rounded-xl bg-red-400 text-slate-900 font-black flex items-center justify-center">
+                    ${item.number}
+                  </div>
+
+                  <h4 class="text-xl font-black text-white">
+                    Soal ${item.number}
+                  </h4>
+
+                </div>
+
+                <p class="text-slate-200 mb-4">
+                  ${item.question}
+                </p>
+
+                <div class="space-y-2">
+
+                  <p class="text-red-300 font-semibold">
+                    Jawaban kamu:
+                    ${item.userAnswer}
+                  </p>
+
+                  <p class="text-green-300 font-semibold">
+                    Jawaban benar:
+                    ${item.correctAnswer}
+                  </p>
+
+                </div>
+
+              </div>
+            `).join("")}
+
+          </div>
+
+        </div>
+      `;
+    } else {
+      wrongHTML = `
+        <div class="mt-8 text-center">
+
+          <div class="text-6xl mb-4">
+            🏆
+          </div>
+
+          <div class="text-3xl font-black text-green-300">
+            MasyaAllah! Semua jawaban benar.
+          </div>
+
+        </div>
+      `;
+    }
+
+    scoreText.innerHTML = `
+      <div class="space-y-6">
+
+        <div class="text-white text-2xl font-bold">
+          Benar ${score} dari ${questions.length} soal
+        </div>
+
+        <div class="text-7xl font-black text-yellow-300">
+          ${nilai}
+        </div>
+
+        ${wrongHTML}
+
+      </div>
+    `;
+
+    result.classList.remove("hidden");
+
+    result.scrollIntoView({
+      behavior: "smooth"
+    });
+  });
+</script>
+
+</BaseLayout>
