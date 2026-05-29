@@ -2,7 +2,7 @@
 title: "Kisah Nabi Adam AS: Manusia Pertama dan Awal Kehidupan di Bumi"
 description: "Pelajari kisah lengkap Nabi Adam AS sebagai manusia pertama, penciptaan Nabi Adam, godaan iblis, turunnya ke bumi, serta hikmah yang dapat dipetik dalam kehidupan sehari-hari."
 pubDate: 2026-05-29T08:10:00+07:00
-category: Kisah Nabi
+category: Sejarah
 author: admin
 image: "/images/nabi-adam.webp"
 tags: ["nabi-adam", "kisah-nabi", "sejarah-islam", "pendidikan-islam", "pai-sd"]
